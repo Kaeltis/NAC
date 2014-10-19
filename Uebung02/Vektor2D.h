@@ -11,5 +11,8 @@ public:
 	Vektor2D(float, float);
 	~Vektor2D();
 	void addiere(Vektor2D);
+	void kopiereIn(Vektor2D*);	
 };
+
+void tausche(Vektor2D*, Vektor2D*);
 #endif

@@ -13,12 +13,29 @@ Matrix::Matrix()
 
 Matrix::~Matrix()
 {
+	cout << "Matrix (";
+	ausgabe(false);
+	cout << ") wurde zerstoert" << endl;
 }
 
-void Matrix::ausgabe()
+void Matrix::ausgabe(bool endline)
 {
 	for (int i = 0; i < m_Zeilen * m_Spalten; i++)
 	{
-		cout << "Element " << i << ": " << m_Element[i] << endl;
+		if (endline)
+		{
+			cout << "Element " << i << ": " << m_Element[i] << endl;
+		}
+		else
+		{
+			if (i % 2 != 0)
+			{
+				cout << " " << m_Element[i];
+			}
+			else
+			{
+				cout << m_Element[i];
+			}
+		}
 	}
 }

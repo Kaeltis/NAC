@@ -10,6 +10,6 @@ protected:
 public:
 	Matrix();
 	~Matrix();
-	void ausgabe();
+	void ausgabe(bool endline);
 };
 #endif
