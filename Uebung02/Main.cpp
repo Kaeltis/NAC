@@ -13,7 +13,7 @@ int main()
 {
 	{
 #ifdef UEBUNG1u2
-		// Anfang Übung 2
+		// Anfang Uebung 2
 		cout << "--- Uebung 1/2 ---" << endl;
 		Matrix myMatrix;
 		myMatrix.ausgabe(true);
@@ -37,7 +37,7 @@ int main()
 #endif
 
 #ifdef UEBUNG3
-		// Anfang Übung 3
+		// Anfang Uebung 3
 		cout << endl << "--- Uebung 3 ---" << endl;
 
 		Vektor2D* z = new Vektor2D(-3, 1);
@@ -71,7 +71,7 @@ int main()
 #endif
 
 #ifdef UEBUNG4
-		// Anfang Übung 4
+		// Anfang Uebung 4
 		cout << endl << "--- Uebung 4 ---" << endl;
 
 		Vektor2D v(1, 2), w(3, 4);
