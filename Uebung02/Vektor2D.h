@@ -9,9 +9,9 @@ class Vektor2D :
 public:
 	Vektor2D();
 	Vektor2D(float, float);
-	~Vektor2D();
 	void addiere(Vektor2D);
 	void kopiereIn(Vektor2D*);	
+	void ausgabe(bool);
 };
 
 void tausche(Vektor2D*, Vektor2D*);

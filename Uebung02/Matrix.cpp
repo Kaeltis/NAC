@@ -2,6 +2,8 @@
 #include <iostream>
 using namespace std;
 
+int Matrix::counter = 0;
+
 Matrix::Matrix()
 	:m_Zeilen(2), m_Spalten(1)
 {
@@ -9,6 +11,8 @@ Matrix::Matrix()
 	m_Element[1] = 0;
 
 	cout << "Standardkonstruktor von Matrix wurde aufgerufen" << endl;
+
+	counter++;
 }
 
 Matrix::~Matrix()
@@ -16,26 +20,30 @@ Matrix::~Matrix()
 	cout << "Matrix (";
 	ausgabe(false);
 	cout << ") wurde zerstoert" << endl;
+
+	counter--;
 }
 
 void Matrix::ausgabe(bool endline)
 {
 	for (int i = 0; i < m_Zeilen * m_Spalten; i++)
 	{
-		if (endline)
+		if (i % 2 != 0)
 		{
-			cout << "Element " << i << ": " << m_Element[i] << endl;
+			cout << " " << m_Element[i];
 		}
 		else
 		{
-			if (i % 2 != 0)
-			{
-				cout << " " << m_Element[i];
-			}
-			else
-			{
-				cout << m_Element[i];
-			}
+			cout << m_Element[i];
 		}
 	}
+	if (endline)
+	{
+		cout << endl;
+	}
+}
+
+int Matrix::getCounter()
+{
+	return counter;
 }

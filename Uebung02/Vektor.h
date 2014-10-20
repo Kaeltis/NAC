@@ -8,7 +8,8 @@ class Vektor :
 {
 public:
 	Vektor();
-	~Vektor();
 	float betrag();
+	float skalarprodukt(Vektor);
+	float winkel(Vektor);
 };
 #endif

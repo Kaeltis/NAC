@@ -3,6 +3,8 @@
 
 class Matrix
 {
+private:
+	static int counter;
 protected:
 	int m_Zeilen;
 	int m_Spalten;
@@ -10,6 +12,7 @@ protected:
 public:
 	Matrix();
 	~Matrix();
-	void ausgabe(bool endline);
+	virtual void ausgabe(bool);
+	static int getCounter();
 };
 #endif

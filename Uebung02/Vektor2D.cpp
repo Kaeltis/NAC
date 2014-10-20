@@ -1,5 +1,5 @@
 #include "Vektor2D.h"
-
+#include <iostream>
 
 Vektor2D::Vektor2D()
 {
@@ -9,10 +9,6 @@ Vektor2D::Vektor2D(float element1, float element2)
 {
 	m_Element[0] = element1;
 	m_Element[1] = element2;
-}
-
-Vektor2D::~Vektor2D()
-{
 }
 
 void Vektor2D::addiere(Vektor2D vektor)
@@ -27,6 +23,13 @@ void Vektor2D::kopiereIn(Vektor2D* ziel)
 	{
 		ziel->m_Element[i] = m_Element[i];
 	}
+}
+
+void Vektor2D::ausgabe(bool endline)
+{
+	std::cout << "Vektor2D: ";
+	Matrix::ausgabe(false);
+	std::cout << std::endl;
 }
 
 void tausche(Vektor2D* vektor1, Vektor2D* vektor2)
