@@ -1,7 +1,6 @@
-#include "Vektor.h"
-
 #ifndef __VEKTOR2D_H__
 #define __VEKTOR2D_H__
+#include "Vektor.h"
 
 class Vektor2D :
 	public Vektor

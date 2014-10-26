@@ -1,7 +1,6 @@
-#include "Matrix.h"
-
 #ifndef __VEKTOR_H__
 #define __VEKTOR_H__
+#include "Matrix.h"
 
 class Vektor :
 	public Matrix

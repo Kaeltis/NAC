@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __GERADE2D_H__
+#define __GERADE2D_H__
 #include "Vektor2D.h"
 
 class Gerade2D
@@ -11,3 +12,4 @@ public:
 	virtual ~Gerade2D();
 	float gerichteterAbstand(Vektor2D);
 };
+#endif
