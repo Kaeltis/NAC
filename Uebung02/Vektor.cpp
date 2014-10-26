@@ -8,6 +8,10 @@ Vektor::Vektor(int m)
 {
 }
 
+Vektor::~Vektor()
+{
+}
+
 void Vektor::subtrahieren(Vektor vektor)
 {
 	for (int i = 0; i < m_Zeilen * m_Spalten; i++)
@@ -46,4 +50,12 @@ double Vektor::winkel(Vektor vektor)
 	}
 
 	return acos(skalarprodukt(vektor) / (betrag() * vektor.betrag())) / M_PI * 180;
+}
+
+void Vektor::multiplizieren(float wert)
+{
+	for (int i = 0; i < m_Zeilen * m_Spalten; i++)
+	{
+		m_Element[i] *= wert;
+	}
 }

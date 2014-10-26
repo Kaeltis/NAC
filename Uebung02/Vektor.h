@@ -8,9 +8,11 @@ class Vektor :
 {
 public:
 	Vektor(int);
+	virtual ~Vektor();
 	void subtrahieren(Vektor);
 	float betrag();
 	float skalarprodukt(Vektor);
 	double winkel(Vektor);
+	void multiplizieren(float);
 };
 #endif

@@ -8,10 +8,10 @@ private:
 protected:
 	int m_Zeilen;
 	int m_Spalten;
-	float *m_Element;
+	float* m_Element;
 public:
-	Matrix(int,int);
-	~Matrix();
+	Matrix(int, int);
+	virtual ~Matrix();
 	virtual void ausgabe(bool);
 	static int getCounter();
 };

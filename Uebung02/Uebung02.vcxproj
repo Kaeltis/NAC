@@ -65,12 +65,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Gerade2D.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Vektor.cpp" />
     <ClCompile Include="Vektor2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Gerade2D.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="Vektor.h" />
     <ClInclude Include="Vektor2D.h" />

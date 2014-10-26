@@ -5,19 +5,22 @@ using namespace std;
 int Matrix::counter = 0;
 
 Matrix::Matrix(int m, int n)
-	:m_Zeilen(m), m_Spalten(n), m_Element(new float[m*n])
+	:m_Zeilen(m), m_Spalten(n), m_Element(new float[m * n])
 {
+	/*
 	cout << "Standardkonstruktor von Matrix wurde aufgerufen" << endl;
+	*/
 
 	counter++;
 }
 
 Matrix::~Matrix()
 {
+	/*
 	cout << "Matrix (";
 	ausgabe(false);
 	cout << ") wurde zerstoert" << endl;
-
+	*/
 	counter--;
 }
 

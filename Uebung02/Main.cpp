@@ -7,6 +7,7 @@
 //#define UEBUNG3
 //#define UEBUNG4
 #define UEBUNG5
+#include "Gerade2D.h"
 
 using namespace std;
 
@@ -104,12 +105,15 @@ int main()
 		Vektor2D* varr[2];
 		varr[0] = new Vektor2D(2, 3);
 		varr[1] = new Vektor2D(-2, 1);
-		
+
 		varr[0]->addiere(*varr[1]);
 		varr[0]->ausgabe(true);
 
 		delete varr[0];
 		delete varr[1];
+
+		Gerade2D g(Vektor2D(-3, -4), Vektor2D(0, 0));
+		cout << g.gerichteterAbstand(Vektor2D(4,3)) << endl;
 #endif
 
 
