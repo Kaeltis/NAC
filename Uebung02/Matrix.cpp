@@ -4,12 +4,9 @@ using namespace std;
 
 int Matrix::counter = 0;
 
-Matrix::Matrix()
-	:m_Zeilen(2), m_Spalten(1)
+Matrix::Matrix(int m, int n)
+	:m_Zeilen(m), m_Spalten(n), m_Element(new float[m*n])
 {
-	m_Element[0] = 0;
-	m_Element[1] = 0;
-
 	cout << "Standardkonstruktor von Matrix wurde aufgerufen" << endl;
 
 	counter++;

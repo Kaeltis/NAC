@@ -3,8 +3,17 @@
 #include <limits>
 #include <cmath>
 
-Vektor::Vektor()
+Vektor::Vektor(int m)
+	:Matrix(m, 1)
 {
+}
+
+void Vektor::subtrahieren(Vektor vektor)
+{
+	for (int i = 0; i < m_Zeilen * m_Spalten; i++)
+	{
+		m_Element[i] -= vektor.m_Element[i];
+	}
 }
 
 float Vektor::betrag()
@@ -29,7 +38,7 @@ float Vektor::skalarprodukt(Vektor vektor)
 	return value;
 }
 
-float Vektor::winkel(Vektor vektor)
+double Vektor::winkel(Vektor vektor)
 {
 	if (m_Zeilen != vektor.m_Zeilen || m_Spalten != vektor.m_Spalten)
 	{

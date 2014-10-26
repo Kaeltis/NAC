@@ -5,7 +5,8 @@
 
 //#define UEBUNG1u2
 //#define UEBUNG3
-#define UEBUNG4
+//#define UEBUNG4
+#define UEBUNG5
 
 using namespace std;
 
@@ -15,10 +16,10 @@ int main()
 #ifdef UEBUNG1u2
 		// Anfang Uebung 2
 		cout << "--- Uebung 1/2 ---" << endl;
-		Matrix myMatrix;
+		Matrix myMatrix(2,1);
 		myMatrix.ausgabe(true);
 
-		Vektor myVektor;
+		Vektor myVektor(2);
 
 		cout << "Betrag von Vektor: " << myVektor.betrag() << endl;
 
@@ -66,8 +67,8 @@ int main()
 		cout << "Tausche z und a" << endl;
 		tausche(z, &a);
 
-		z->ausgabe();
-		a.ausgabe();
+		z->ausgabe(true);
+		a.ausgabe(true);
 #endif
 
 #ifdef UEBUNG4
@@ -75,7 +76,7 @@ int main()
 		cout << endl << "--- Uebung 4 ---" << endl;
 
 		Vektor2D v(1, 2), w(3, 4);
-		Matrix M;
+		Matrix M(2,1);
 		Matrix* Mpointer;
 
 		M = v;
@@ -97,6 +98,20 @@ int main()
 
 		cout << "Winkel: " << o.winkel(p) << endl;
 #endif
+#ifdef UEBUNG5
+		Vektor2D vektorArray[3];
+
+		Vektor2D* varr[2];
+		varr[0] = new Vektor2D(2, 3);
+		varr[1] = new Vektor2D(-2, 1);
+		
+		varr[0]->addiere(*varr[1]);
+		varr[0]->ausgabe(true);
+
+		delete varr[0];
+		delete varr[1];
+#endif
+
 
 		cout << endl << "--- ENDE ---" << endl;
 	}

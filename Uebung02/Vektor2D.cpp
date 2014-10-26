@@ -2,10 +2,12 @@
 #include <iostream>
 
 Vektor2D::Vektor2D()
+	:Vektor(2)
 {
 }
 
 Vektor2D::Vektor2D(float element1, float element2)
+	: Vektor(2)
 {
 	m_Element[0] = element1;
 	m_Element[1] = element2;

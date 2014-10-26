@@ -7,9 +7,10 @@ class Vektor :
 	public Matrix
 {
 public:
-	Vektor();
+	Vektor(int);
+	void subtrahieren(Vektor);
 	float betrag();
 	float skalarprodukt(Vektor);
-	float winkel(Vektor);
+	double winkel(Vektor);
 };
 #endif
