@@ -10,7 +10,7 @@ static void falsch()
 #define TEST(bedingung)                   \
   if(bedingung)                           \
     std::cout << "richtig" << std::endl;  \
-    else                                    \
+	    else                                    \
     falsch();
 
 void geradenTest(const Gerade2D& g)

@@ -1,4 +1,6 @@
 #include "Matrix.h"
+#include "Vektor.h"
+#include <limits>
 #include <iostream>
 using namespace std;
 
@@ -14,6 +16,93 @@ Matrix::Matrix(int m, int n)
 	counter++;
 }
 
+Matrix::Matrix(const Matrix& other)
+{
+	//cout << "Copy constructor called" << endl;
+	m_Zeilen = other.m_Zeilen;
+	m_Spalten = other.m_Spalten;
+	m_Element = new float[m_Zeilen * m_Spalten];
+
+	for (int i = 0; i <= m_Zeilen * m_Spalten; i++)
+	{
+		m_Element[i] = other.m_Element[i];
+	}
+}
+
+
+Matrix& Matrix::operator=(const Matrix& other)
+{
+	//cout << "operator= called" << endl;
+	if (this != &other)
+	{
+		m_Zeilen = other.m_Zeilen;
+		m_Spalten = other.m_Spalten;
+
+		delete [] m_Element;
+		m_Element = new float[m_Zeilen * m_Spalten];
+
+		for (int i = 0; i <= m_Zeilen * m_Spalten; i++)
+		{
+			m_Element[i] = other.m_Element[i];
+		}
+	}
+	return *this;
+}
+
+float& Matrix::operator()(int i, int j)
+{
+	//TODO: Sehr dubiose implementierung von mir
+	if (m_Zeilen < m_Spalten)
+	{
+		if (m_Zeilen >= i && m_Spalten >= j)
+		{
+			return m_Element[((j - 1) * m_Spalten) + i];
+		}
+		else
+		{
+			throw numeric_limits<float>::quiet_NaN();
+		}
+	}
+	else
+	{
+		if (m_Zeilen >= i && m_Spalten >= j)
+		{
+			return m_Element[((i - 1) * m_Zeilen) + j];
+		}
+		else
+		{
+			throw numeric_limits<float>::quiet_NaN();
+		}
+	}
+}
+
+float Matrix::operator()(int i, int j) const
+{
+	//TODO: Sehr dubiose implementierung von mir
+	if (m_Zeilen < m_Spalten)
+	{
+		if (m_Zeilen >= i && m_Spalten >= j)
+		{
+			return m_Element[((j - 1) * m_Spalten) + i];
+		}
+		else
+		{
+			throw numeric_limits<float>::quiet_NaN();
+		}
+	}
+	else
+	{
+		if (m_Zeilen >= i && m_Spalten >= j)
+		{
+			return m_Element[((i - 1) * m_Zeilen) + j];
+		}
+		else
+		{
+			throw numeric_limits<float>::quiet_NaN();
+		}
+	}
+}
+
 Matrix::~Matrix()
 {
 	/*
@@ -21,6 +110,7 @@ Matrix::~Matrix()
 	ausgabe(false);
 	cout << ") wurde zerstoert" << endl;
 	*/
+	delete [] m_Element;
 	counter--;
 }
 

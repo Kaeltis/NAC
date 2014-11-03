@@ -12,6 +12,30 @@ Vektor::~Vektor()
 {
 }
 
+float& Vektor::operator()(int i)
+{
+	if (m_Zeilen >= i)
+	{
+		return m_Element[i-1];
+	}
+	else
+	{
+		throw std::numeric_limits<float>::quiet_NaN();
+	}
+}
+
+float Vektor::operator()(int i) const
+{
+	if (m_Zeilen >= i)
+	{
+		return m_Element[i - 1];
+	}
+	else
+	{
+		throw std::numeric_limits<float>::quiet_NaN();
+	}
+}
+
 void Vektor::subtrahieren(Vektor vektor)
 {
 	for (int i = 0; i < m_Zeilen * m_Spalten; i++)

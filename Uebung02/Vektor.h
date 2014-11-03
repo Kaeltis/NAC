@@ -1,6 +1,6 @@
+#include "Matrix.h"
 #ifndef __VEKTOR_H__
 #define __VEKTOR_H__
-#include "Matrix.h"
 
 class Vektor :
 	public Matrix
@@ -8,6 +8,8 @@ class Vektor :
 public:
 	Vektor(int);
 	virtual ~Vektor();
+	float& operator()(int);
+	float operator()(int) const;
 	void subtrahieren(Vektor);
 	float betrag() const;
 	float skalarprodukt(Vektor) const;

@@ -8,7 +8,8 @@
 //#define UEBUNG3
 //#define UEBUNG4
 //#define UEBUNG5
-#define UEBUNG6
+//#define UEBUNG6
+#define UEBUNG7
 
 using namespace std;
 
@@ -122,6 +123,29 @@ int main()
 
 		void geradenTest(const Gerade2D& g);
 		geradenTest(Gerade2D(Vektor2D(-3, -4), Vektor2D(2, 3)));
+#endif
+
+#ifdef UEBUNG7
+		Matrix M(1, 2);
+		M(1, 1) = 1;
+		M(1, 2) = 125;
+
+		Matrix N(2, 1);
+		N(1, 1) = 2;
+		N(2, 1) = 255;
+
+		cout << M(1, 1) << endl;
+		cout << M(1, 2) << endl;
+
+		cout << N(1, 1) << endl;
+		cout << N(2, 1) << endl;
+
+		Vektor2D v(1, 2), w(3, 4);
+
+		cout << w(2) << endl;
+
+		void matrixTest();
+		matrixTest();
 #endif
 
 
