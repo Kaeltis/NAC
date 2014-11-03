@@ -10,8 +10,8 @@ public:
 	Vektor2D(float, float);
 	virtual ~Vektor2D();
 	void addiere(Vektor2D);
-	void kopiereIn(Vektor2D*);
-	void ausgabe(bool);
+	void kopiereIn(Vektor2D*) const;
+	void ausgabe(bool) const;
 };
 
 void tausche(Vektor2D*, Vektor2D*);

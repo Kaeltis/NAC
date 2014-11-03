@@ -30,6 +30,9 @@
     <ClCompile Include="Gerade2D.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="geradenTest.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Matrix.h">

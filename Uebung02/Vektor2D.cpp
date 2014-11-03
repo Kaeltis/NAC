@@ -23,7 +23,7 @@ void Vektor2D::addiere(Vektor2D vektor)
 	m_Element[1] += vektor.m_Element[1];
 }
 
-void Vektor2D::kopiereIn(Vektor2D* ziel)
+void Vektor2D::kopiereIn(Vektor2D* ziel) const
 {
 	for (int i = 0; i < ziel->m_Zeilen * ziel->m_Spalten; i++)
 	{
@@ -31,7 +31,7 @@ void Vektor2D::kopiereIn(Vektor2D* ziel)
 	}
 }
 
-void Vektor2D::ausgabe(bool endline)
+void Vektor2D::ausgabe(bool endline) const
 {
 	std::cout << "Vektor2D: ";
 	Matrix::ausgabe(false);

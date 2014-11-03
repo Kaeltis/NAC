@@ -1,13 +1,14 @@
 #include "Matrix.h"
 #include "Vektor.h"
 #include "Vektor2D.h"
+#include "Gerade2D.h"
 #include <iostream>
 
 //#define UEBUNG1u2
 //#define UEBUNG3
 //#define UEBUNG4
-#define UEBUNG5
-#include "Gerade2D.h"
+//#define UEBUNG5
+#define UEBUNG6
 
 using namespace std;
 
@@ -114,6 +115,13 @@ int main()
 
 		Gerade2D g(Vektor2D(-3, -4), Vektor2D(0, 0));
 		cout << g.gerichteterAbstand(Vektor2D(4,3)) << endl;
+#endif
+
+#ifdef UEBUNG6
+		cout << Gerade2D(Vektor2D(-3, -4)).aufGerade(Vektor2D(4, -3)) << endl;
+
+		void geradenTest(const Gerade2D& g);
+		geradenTest(Gerade2D(Vektor2D(-3, -4), Vektor2D(2, 3)));
 #endif
 
 

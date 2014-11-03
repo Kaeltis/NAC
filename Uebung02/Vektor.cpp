@@ -20,12 +20,12 @@ void Vektor::subtrahieren(Vektor vektor)
 	}
 }
 
-float Vektor::betrag()
+float Vektor::betrag() const
 {
 	return sqrt(skalarprodukt(*this));
 }
 
-float Vektor::skalarprodukt(Vektor vektor)
+float Vektor::skalarprodukt(Vektor vektor) const
 {
 	if (m_Zeilen != vektor.m_Zeilen || m_Spalten != vektor.m_Spalten)
 	{
@@ -42,7 +42,7 @@ float Vektor::skalarprodukt(Vektor vektor)
 	return value;
 }
 
-double Vektor::winkel(Vektor vektor)
+double Vektor::winkel(Vektor vektor) const
 {
 	if (m_Zeilen != vektor.m_Zeilen || m_Spalten != vektor.m_Spalten)
 	{

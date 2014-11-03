@@ -66,6 +66,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Gerade2D.cpp" />
+    <ClCompile Include="geradenTest.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="Vektor.cpp" />

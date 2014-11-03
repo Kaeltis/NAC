@@ -24,7 +24,7 @@ Matrix::~Matrix()
 	counter--;
 }
 
-void Matrix::ausgabe(bool endline)
+void Matrix::ausgabe(bool endline) const
 {
 	for (int i = 0; i < m_Zeilen * m_Spalten; i++)
 	{

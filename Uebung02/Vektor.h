@@ -9,9 +9,9 @@ public:
 	Vektor(int);
 	virtual ~Vektor();
 	void subtrahieren(Vektor);
-	float betrag();
-	float skalarprodukt(Vektor);
-	double winkel(Vektor);
+	float betrag() const;
+	float skalarprodukt(Vektor) const;
+	double winkel(Vektor) const;
 	void multiplizieren(float);
 };
 #endif

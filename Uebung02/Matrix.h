@@ -12,7 +12,7 @@ protected:
 public:
 	Matrix(int, int);
 	virtual ~Matrix();
-	virtual void ausgabe(bool);
+	virtual void ausgabe(bool) const;
 	static int getCounter();
 };
 #endif
