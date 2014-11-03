@@ -76,7 +76,7 @@ float& Matrix::operator()(int i, int j)
 	}
 }
 
-float Matrix::operator()(int i, int j) const
+const float& Matrix::operator()(int i, int j) const
 {
 	//TODO: Sehr dubiose implementierung von mir
 	if (m_Zeilen < m_Spalten)

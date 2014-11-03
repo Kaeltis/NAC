@@ -24,7 +24,7 @@ float& Vektor::operator()(int i)
 	}
 }
 
-float Vektor::operator()(int i) const
+const float& Vektor::operator()(int i) const
 {
 	if (m_Zeilen >= i)
 	{

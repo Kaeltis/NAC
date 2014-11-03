@@ -9,7 +9,7 @@ public:
 	Vektor(int);
 	virtual ~Vektor();
 	float& operator()(int);
-	float operator()(int) const;
+	const float& operator()(int) const;
 	void subtrahieren(Vektor);
 	float betrag() const;
 	float skalarprodukt(Vektor) const;

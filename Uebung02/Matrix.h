@@ -15,7 +15,7 @@ public:
 	Matrix(const Matrix&);
 	Matrix& operator=(const Matrix&);
 	float& operator()(int, int);
-	float operator()(int, int) const;
+	const float& operator()(int, int) const;
 	virtual ~Matrix();
 	virtual void ausgabe(bool) const;
 	static int getCounter();
