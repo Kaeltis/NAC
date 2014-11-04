@@ -23,7 +23,7 @@ Matrix::Matrix(const Matrix& other)
 	m_Spalten = other.m_Spalten;
 	m_Element = new float[m_Zeilen * m_Spalten];
 
-	for (int i = 0; i <= m_Zeilen * m_Spalten; i++)
+	for (int i = 0; i < m_Zeilen * m_Spalten; i++)
 	{
 		m_Element[i] = other.m_Element[i];
 	}
@@ -41,7 +41,7 @@ Matrix& Matrix::operator=(const Matrix& other)
 		delete [] m_Element;
 		m_Element = new float[m_Zeilen * m_Spalten];
 
-		for (int i = 0; i <= m_Zeilen * m_Spalten; i++)
+		for (int i = 0; i < m_Zeilen * m_Spalten; i++)
 		{
 			m_Element[i] = other.m_Element[i];
 		}
