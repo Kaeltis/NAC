@@ -44,6 +44,8 @@ void matrixTest()
 	m2(2, 1) = 4; m2(2, 2) = 5;
 	m2(3, 1) = 7; m2(3, 2) = 8;
 
+	m2.ausgabe(true);
+
 	Matrix mr(m1*m2);
 
 	Matrix mexpected(3, 2);

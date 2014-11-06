@@ -9,6 +9,11 @@ int Matrix::counter = 0;
 Matrix::Matrix(int m, int n)
 	:m_Zeilen(m), m_Spalten(n), m_Element(new float[m * n])
 {
+	for (int i = 0; i < m_Zeilen * m_Spalten; i++)
+	{
+		m_Element[i] = 0;
+	}
+
 	counter++;
 }
 
@@ -50,7 +55,7 @@ float& Matrix::operator()(int i, int j)
 	{
 		if (m_Zeilen >= i && m_Spalten >= j)
 		{
-			return m_Element[((j - 1) * m_Spalten) + i];
+			return m_Element[((j - 1) * m_Spalten) + (i - 1)];
 		}
 		else
 		{
@@ -61,7 +66,7 @@ float& Matrix::operator()(int i, int j)
 	{
 		if (m_Zeilen >= i && m_Spalten >= j)
 		{
-			return m_Element[((i - 1) * m_Zeilen) + j];
+			return m_Element[((i - 1) * m_Zeilen) + (j - 1)];
 		}
 		else
 		{
@@ -77,7 +82,7 @@ const float& Matrix::operator()(int i, int j) const
 	{
 		if (m_Zeilen >= i && m_Spalten >= j)
 		{
-			return m_Element[((j - 1) * m_Spalten) + i];
+			return m_Element[((j - 1) * m_Spalten) + (i - 1)];
 		}
 		else
 		{
@@ -88,7 +93,7 @@ const float& Matrix::operator()(int i, int j) const
 	{
 		if (m_Zeilen >= i && m_Spalten >= j)
 		{
-			return m_Element[((i - 1) * m_Zeilen) + j];
+			return m_Element[((i - 1) * m_Zeilen) + (j - 1)];
 		}
 		else
 		{
@@ -101,24 +106,19 @@ Matrix::~Matrix()
 {
 	cout << "Matrix (";
 	ausgabe(false);
-	cout << ") wurde zerstoert" << endl;
+	cout << ") wird zerstoert" << endl;
 
 	delete [] m_Element;
 	counter--;
+
+	cout << "Matrix wurde zerstoert" << endl;
 }
 
 void Matrix::ausgabe(bool endline) const
 {
 	for (int i = 0; i < m_Zeilen * m_Spalten; i++)
 	{
-		if (i % 2 != 0)
-		{
-			cout << " " << m_Element[i];
-		}
-		else
-		{
-			cout << m_Element[i];
-		}
+		cout << " " << m_Element[i];
 	}
 	if (endline)
 	{
