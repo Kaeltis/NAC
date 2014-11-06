@@ -2,6 +2,7 @@
 #define __MATRIX_H__
 
 class Vektor;
+
 class Matrix
 {
 private:
@@ -19,7 +20,7 @@ public:
 	virtual ~Matrix();
 	virtual void ausgabe(bool) const;
 	static int getCounter();
-	Matrix operator*(const Matrix & m) const;
+	Matrix operator*(const Matrix& m) const;
 	Vektor operator*(const Vektor& v) const;
 };
 #endif

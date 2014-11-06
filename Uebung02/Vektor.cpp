@@ -16,7 +16,7 @@ float& Vektor::operator()(int i)
 {
 	if (m_Zeilen >= i)
 	{
-		return m_Element[i-1];
+		return m_Element[i - 1];
 	}
 	else
 	{
