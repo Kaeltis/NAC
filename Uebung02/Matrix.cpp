@@ -48,14 +48,13 @@ Matrix& Matrix::operator=(const Matrix& other)
 	return *this;
 }
 
-float& Matrix::operator()(int i, int j)
+float& Matrix::operator()(int zeile, int spalte)
 {
-	//TODO: Sehr dubiose implementierung von mir
-	if (m_Zeilen < m_Spalten)
+	if (m_Zeilen <= m_Spalten)
 	{
-		if (m_Zeilen >= i && m_Spalten >= j)
+		if (m_Zeilen >= zeile && m_Spalten >= spalte)
 		{
-			return m_Element[((j - 1) * m_Spalten) + (i - 1)];
+			return m_Element[(m_Spalten * (zeile - 1)) + (spalte - 1)];
 		}
 		else
 		{
@@ -64,9 +63,9 @@ float& Matrix::operator()(int i, int j)
 	}
 	else
 	{
-		if (m_Zeilen >= i && m_Spalten >= j)
+		if (m_Zeilen >= zeile && m_Spalten >= spalte)
 		{
-			return m_Element[((i - 1) * m_Zeilen) + (j - 1)];
+			return m_Element[(m_Zeilen * (spalte - 1)) + (zeile - 1)];
 		}
 		else
 		{
@@ -75,14 +74,13 @@ float& Matrix::operator()(int i, int j)
 	}
 }
 
-const float& Matrix::operator()(int i, int j) const
+const float& Matrix::operator()(int zeile, int spalte) const
 {
-	//TODO: Sehr dubiose implementierung von mir
-	if (m_Zeilen < m_Spalten)
+	if (m_Zeilen <= m_Spalten)
 	{
-		if (m_Zeilen >= i && m_Spalten >= j)
+		if (m_Zeilen >= zeile && m_Spalten >= spalte)
 		{
-			return m_Element[((j - 1) * m_Spalten) + (i - 1)];
+			return m_Element[(m_Spalten * (zeile - 1)) + (spalte - 1)];
 		}
 		else
 		{
@@ -91,9 +89,9 @@ const float& Matrix::operator()(int i, int j) const
 	}
 	else
 	{
-		if (m_Zeilen >= i && m_Spalten >= j)
+		if (m_Zeilen >= zeile && m_Spalten >= spalte)
 		{
-			return m_Element[((i - 1) * m_Zeilen) + (j - 1)];
+			return m_Element[(m_Zeilen * (spalte - 1)) + (zeile - 1)];
 		}
 		else
 		{
@@ -104,14 +102,18 @@ const float& Matrix::operator()(int i, int j) const
 
 Matrix::~Matrix()
 {
-	cout << "Matrix (";
-	ausgabe(false);
-	cout << ") wird zerstoert" << endl;
+	#ifdef DEBUG
+		cout << "Matrix (";
+		ausgabe(false);
+		cout << ") wird zerstoert" << endl;
+	#endif
 
 	delete [] m_Element;
 	counter--;
 
-	cout << "Matrix wurde zerstoert" << endl;
+	#ifdef DEBUG
+		cout << "Matrix wurde zerstoert" << endl;
+	#endif
 }
 
 void Matrix::ausgabe(bool endline) const
