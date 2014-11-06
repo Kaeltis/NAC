@@ -50,77 +50,56 @@ Matrix& Matrix::operator=(const Matrix& other)
 
 float& Matrix::operator()(int zeile, int spalte)
 {
-	if (m_Zeilen <= m_Spalten)
+	if (m_Zeilen >= zeile && m_Spalten >= spalte)
 	{
-		if (m_Zeilen >= zeile && m_Spalten >= spalte)
-		{
-			return m_Element[(m_Spalten * (zeile - 1)) + (spalte - 1)];
-		}
-		else
-		{
-			throw numeric_limits<float>::quiet_NaN();
-		}
+		return m_Element[(m_Spalten * (zeile - 1)) + (spalte - 1)];
 	}
 	else
 	{
-		if (m_Zeilen >= zeile && m_Spalten >= spalte)
-		{
-			return m_Element[(m_Zeilen * (spalte - 1)) + (zeile - 1)];
-		}
-		else
-		{
-			throw numeric_limits<float>::quiet_NaN();
-		}
+		throw numeric_limits<float>::quiet_NaN();
 	}
 }
 
 const float& Matrix::operator()(int zeile, int spalte) const
 {
-	if (m_Zeilen <= m_Spalten)
+	if (m_Zeilen >= zeile && m_Spalten >= spalte)
 	{
-		if (m_Zeilen >= zeile && m_Spalten >= spalte)
-		{
-			return m_Element[(m_Spalten * (zeile - 1)) + (spalte - 1)];
-		}
-		else
-		{
-			throw numeric_limits<float>::quiet_NaN();
-		}
+		return m_Element[(m_Spalten * (zeile - 1)) + (spalte - 1)];
 	}
 	else
 	{
-		if (m_Zeilen >= zeile && m_Spalten >= spalte)
-		{
-			return m_Element[(m_Zeilen * (spalte - 1)) + (zeile - 1)];
-		}
-		else
-		{
-			throw numeric_limits<float>::quiet_NaN();
-		}
+		throw numeric_limits<float>::quiet_NaN();
 	}
 }
 
 Matrix::~Matrix()
 {
-	#ifdef DEBUG
+#ifdef DEBUG
 		cout << "Matrix (";
 		ausgabe(false);
 		cout << ") wird zerstoert" << endl;
-	#endif
+#endif
 
 	delete [] m_Element;
 	counter--;
 
-	#ifdef DEBUG
+#ifdef DEBUG
 		cout << "Matrix wurde zerstoert" << endl;
-	#endif
+#endif
 }
 
 void Matrix::ausgabe(bool endline) const
 {
+	int count = 0;
 	for (int i = 0; i < m_Zeilen * m_Spalten; i++)
 	{
+		count++;
 		cout << " " << m_Element[i];
+		if (count >= m_Spalten)
+		{
+			cout << endl;
+			count = 0;
+		}
 	}
 	if (endline)
 	{
