@@ -1,6 +1,6 @@
 #include "Funktion2D.h"
 #include "math.h"
-
+#include <iostream>
 
 Funktion2D::Funktion2D()
 {
@@ -17,12 +17,15 @@ float Funktion2D::operator()(Vektor2D vektor) const
 	return -(sin(vektor.betrag()) / vektor.betrag());
 }
 
-float minimieren2D(const Funktion2D& funktion, float start, float schrittweite, float tol, float ftol)
+float minimieren2D(const Funktion2D& funktion, const Vektor2D& stelle, float schrittweite, float tol, float ftol)
 {
 	return 0;
 }
 
-float gradient2D(const Funktion2D funktion, float stelle)
+Vektor2D gradient2D(const Funktion2D& funktion, const Vektor2D& stelle)
 {
-	return 0;
+	float x = (funktion(Vektor2D(stelle(1) + myh(1), stelle(2))) - funktion(stelle)) / myh(1);
+	float y = (funktion(Vektor2D(stelle(1), stelle(2) + myh(1))) - funktion(stelle)) / myh(1);
+
+	return Vektor2D(x,y);
 }
