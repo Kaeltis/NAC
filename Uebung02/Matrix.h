@@ -20,7 +20,7 @@ public:
 	virtual ~Matrix();
 	virtual void ausgabe(bool) const;
 	static int getCounter();
-	Matrix operator*(const Matrix& m) const;
-	Vektor operator*(const Vektor& v) const;
+	Matrix operator*(const Matrix&) const;
+	Vektor operator*(const Vektor&) const;
 };
 #endif

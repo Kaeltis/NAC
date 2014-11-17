@@ -38,6 +38,22 @@ void Vektor2D::ausgabe(bool endline) const
 	std::cout << std::endl;
 }
 
+void Vektor2D::operator*(const float& wert)
+{
+	for (int i = 0; i < m_Zeilen * m_Spalten; i++)
+	{
+		m_Element[i] *= wert;
+	}
+}
+
+void Vektor2D::operator+(const Vektor2D& vektor2)
+{
+	for (int i = 0; i < m_Zeilen * m_Spalten; i++)
+	{
+		m_Element[i] += vektor2.m_Element[i];
+	}
+}
+
 void tausche(Vektor2D* vektor1, Vektor2D* vektor2)
 {
 	Vektor2D* temp = new Vektor2D;

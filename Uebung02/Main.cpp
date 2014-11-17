@@ -9,7 +9,9 @@
 //#define UEBUNG4
 //#define UEBUNG5
 //#define UEBUNG6
-#define UEBUNG7
+//#define UEBUNG7
+#define UEBUNG8
+#include "Funktion2D.h"
 
 using namespace std;
 
@@ -146,6 +148,11 @@ int main()
 
 		void matrixTest();
 		matrixTest();
+#endif
+
+#ifdef UEBUNG8
+		Funktion2D f;
+		cout << f(Vektor2D(4, 0));
 #endif
 
 

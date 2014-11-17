@@ -65,6 +65,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Funktion2D.cpp" />
     <ClCompile Include="Gerade2D.cpp" />
     <ClCompile Include="geradenTest.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -75,6 +76,7 @@
     <ClCompile Include="Vektor2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Funktion2D.h" />
     <ClInclude Include="Gerade2D.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="Vektor.h" />
