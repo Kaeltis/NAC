@@ -33,7 +33,7 @@ void Vektor2D::kopiereIn(Vektor2D* ziel) const
 
 void Vektor2D::ausgabe(bool endline) const
 {
-	std::cout << "Vektor2D: ";
+	//std::cout << "Vektor2D: ";
 	Matrix::ausgabe(false);
 	std::cout << std::endl;
 }

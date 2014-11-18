@@ -13,10 +13,11 @@ public:
 };
 
 Vektor2D gradient2D(const Funktion2D&, const Vektor2D&);
-float minimieren2D(const Funktion2D&, const Vektor2D&, float, float = 0.001, float = 0.001); //TODO: Werte anpassen
+float minimieren2D(const Funktion2D&, const Vektor2D&, float, float = 0.0001, float = 0.0001); //TODO: Werte anpassen
 
 inline float myh(float x)
 {
-	return sqrt(FLT_EPSILON)*x;
+	//return sqrt(FLT_EPSILON)*x;
+	return 0.0001;
 }
 #endif

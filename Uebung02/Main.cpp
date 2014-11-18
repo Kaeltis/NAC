@@ -153,10 +153,9 @@ int main()
 #ifdef UEBUNG8
 		Funktion2D f;
 
-		cout << f(Vektor2D(4, 1)) << endl;
-
-		gradient2D(f, Vektor2D(4, 0)).ausgabe(true);
-		gradient2D(f, Vektor2D(4, 1)).ausgabe(true);
+		minimieren2D(f, Vektor2D(4, 0), 1);
+		minimieren2D(f, Vektor2D(4, 1), 1);
+		minimieren2D(f, Vektor2D(3.0, 1.0), 1);
 #endif
 
 
