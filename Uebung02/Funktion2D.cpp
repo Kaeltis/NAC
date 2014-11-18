@@ -19,6 +19,7 @@ float Funktion2D::operator()(Vektor2D vektor) const
 
 float minimieren2D(const Funktion2D& funktion, const Vektor2D& stelle, float schrittweite, float tol, float ftol)
 {
+	int count = 0;
 	Vektor2D schritt = stelle;
 	Vektor2D tempschritt;
 	Vektor2D gradient;
@@ -36,9 +37,10 @@ float minimieren2D(const Funktion2D& funktion, const Vektor2D& stelle, float sch
 		schritt + tempschritt;
 
 		funktionswertneu = funktion(schritt);
+		count++;
 	}
 
-	std::cout << "Stelle: " << std::endl;
+	std::cout << "Anzahl Schritte: " << count << " Stelle: " << std::endl;
 	schritt.ausgabe(true);
 	std::cout << "Funktionswert: " << funktionswertneu << std::endl << std::endl;
 	return funktionswertneu;

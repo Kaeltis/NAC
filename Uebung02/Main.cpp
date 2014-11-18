@@ -154,8 +154,11 @@ int main()
 		Funktion2D f;
 
 		minimieren2D(f, Vektor2D(4, 0), 1);
+		cout << "----------------------------------" << endl;
 		minimieren2D(f, Vektor2D(4, 1), 1);
+		cout << "----------------------------------" << endl;
 		minimieren2D(f, Vektor2D(3.0, 1.0), 1);
+		cout << "----------------------------------" << endl;
 #endif
 
 
