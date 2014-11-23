@@ -153,11 +153,11 @@ int main()
 #ifdef UEBUNG8
 		Funktion2D f;
 
-		minimieren2D(f, Vektor2D(4, 0), 1);
+		minimieren2D(f, Vektor2D(4, 0), 0.85);
 		cout << "----------------------------------" << endl;
-		minimieren2D(f, Vektor2D(4, 1), 1);
+		minimieren2D(f, Vektor2D(4, 1), 0.75);
 		cout << "----------------------------------" << endl;
-		minimieren2D(f, Vektor2D(3.0, 1.0), 1);
+		minimieren2D(f, Vektor2D(3.0, 1.0), 0.4);
 		cout << "----------------------------------" << endl;
 #endif
 
