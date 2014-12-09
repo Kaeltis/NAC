@@ -72,6 +72,7 @@
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="MatrixMult.cpp" />
     <ClCompile Include="matrixTest.cpp" />
+    <ClCompile Include="NSFunktion2D.cpp" />
     <ClCompile Include="Vektor.cpp" />
     <ClCompile Include="Vektor2D.cpp" />
   </ItemGroup>
@@ -79,6 +80,7 @@
     <ClInclude Include="Funktion2D.h" />
     <ClInclude Include="Gerade2D.h" />
     <ClInclude Include="Matrix.h" />
+    <ClInclude Include="NSFunktion2D.h" />
     <ClInclude Include="Vektor.h" />
     <ClInclude Include="Vektor2D.h" />
   </ItemGroup>

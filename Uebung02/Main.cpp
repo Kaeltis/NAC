@@ -2,7 +2,11 @@
 #include "Vektor.h"
 #include "Vektor2D.h"
 #include "Gerade2D.h"
+#include "Funktion2D.h"
 #include <iostream>
+#include "NSFunktion2D.h"
+
+using namespace std;
 
 //#define UEBUNG1u2
 //#define UEBUNG3
@@ -10,10 +14,8 @@
 //#define UEBUNG5
 //#define UEBUNG6
 //#define UEBUNG7
-#define UEBUNG8
-#include "Funktion2D.h"
-
-using namespace std;
+//#define UEBUNG8
+#define UEBUNG9
 
 int main()
 {
@@ -161,6 +163,33 @@ int main()
 		cout << "----------------------------------" << endl;
 #endif
 
+#ifdef UEBUNG9
+		NSFunktion2D ns;
+
+		cout << "Bisektion" << endl;
+		cout << "----------------------------------" << endl;
+		cout << bisektion(ns, 3, 4.5) << endl;
+		cout << "----------------------------------" << endl;
+		cout << bisektion(ns, -3.5, 4.5) << endl;
+		cout << "----------------------------------" << endl;
+		cout << bisektion(ns, 0.1, 2) << endl;
+		cout << "----------------------------------" << endl;
+		cout << bisektion(ns, 1.4, 2) << endl;
+		cout << "----------------------------------" << endl;
+
+		cout << endl;
+
+		cout << "Sekantenmethode" << endl;
+		cout << "----------------------------------" << endl;
+		cout << sekantenmethode(ns, 3, 4.5) << endl;
+		cout << "----------------------------------" << endl;
+		cout << sekantenmethode(ns, -3.5, 4.5) << endl;
+		cout << "----------------------------------" << endl;
+		cout << sekantenmethode(ns, 0.1, 2) << endl;
+		cout << "----------------------------------" << endl;
+		cout << sekantenmethode(ns, 1.4, 2) << endl;
+		cout << "----------------------------------" << endl;
+#endif
 
 		cout << endl << "--- ENDE ---" << endl;
 	}
